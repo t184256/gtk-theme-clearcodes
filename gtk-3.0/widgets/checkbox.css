@@ -1,6 +1,6 @@
 checkbutton,
 radiobutton {
-    padding: 0.2em 0;
+    padding: 0.25em;
 }
 
 radio,
@@ -10,6 +10,7 @@ check {
     border-width: 1px;
     background-color: @input_bg_color;
     color: @input_fg_color;
+    -gtk-icon-source: none;
 }
 
 radio:not(:last-child),
@@ -27,9 +28,13 @@ radio {
 }
 
 check:checked {
-    -gtk-icon-source: -gtk-recolor(url("../assets/check.svg"));
+    background-color: @active;
+}
+
+check:indeterminate {
+    background-color: mix(@active, @bg_color, 0.5);
 }
 
 radio:checked {
-    -gtk-icon-source: -gtk-recolor(url("../assets/radio.svg"));
+    background-color: @active;
 }

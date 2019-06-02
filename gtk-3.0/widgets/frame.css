@@ -1,3 +1,16 @@
 frame border {
-    border-width: 1px;
+    border: 1px dotted @border_color;
+}
+
+box separator {
+    background-color: @bg;
+    margin: 0px;
+}
+
+box separator.vertical {
+    border-left: 1px dotted @border_color;
+}
+
+box separator.horizontal {
+    border-top: 1px dotted @border_color;
 }

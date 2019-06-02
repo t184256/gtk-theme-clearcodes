@@ -1,3 +1,4 @@
+/*
 paned separator {
     background-color: transparent;
     background-image: url("../assets/pane-handle.svg");
@@ -9,8 +10,17 @@ paned separator {
 
 paned.vertical > separator {
     background-image: url("../assets/pane-handle-vertical.svg");
+    border-bottom: .5px dotted @border_color;
 }
 
 paned separator:hover {
     background-color: @bg_color;
+}
+*/
+
+paned.vertical > separator {
+    border-bottom: .5px dotted @border_color;
+}
+paned.horizontal > separator {
+    border-right: .5px dotted @border_color;
 }

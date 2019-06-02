@@ -1,11 +1,15 @@
 button {
-    border-radius: 3px;
-    padding: 0.5em;
+    /*border-radius: 3px;*/
+    /*padding: 0.5em;*/
+    padding: 0.25em;
+    margin: 1px;
     border-width: 1px;
+    /*
     background-image: linear-gradient(to bottom,
         @input_bg_color,
         @input_bg_color 40%,
         shade(@input_bg_color, 0.94));
+    */
     color: @input_fg_color;
 }
 
@@ -25,6 +29,7 @@ button.circular {
     border-radius: 100em;
 }
 
+/*
 button:hover,
 button:focus {
     background-image: linear-gradient(to bottom,
@@ -32,26 +37,40 @@ button:focus {
         @input_bg_color 40%,
         shade(@input_bg_color, 0.98));
 }
+*/
 button:active,
 button:checked {
+    /*
     background-image: linear-gradient(to bottom,
         shade(@base_color, 0.95),
         shade(@base_color, 0.9));
+    */
+    background: @act_bg;
+    color: @act_fg;
+    border-color: @act_border;
 }
+/*
 button:disabled {
-    background: shade(@input_bg_color, 0.94);
+    background: @dis_bg;
+    border-color: @dis_border;
+    border-style: dotted;
 }
+*/
 
 button.link label {
-    color: @focus_color;
+    text-decoration: underline;
+}
+/*
+button.link label {
+    color: @fg_color;
     text-decoration: underline;
 }
 button.link:hover label,
 button.link:focus label {
-    color: mix(@focus_color, @fg_color, 0.2);
+    color: @focus_color;
 }
 button.link:active label {
-    color: mix(@focus_color, @fg_color, 0.5);
+    color: @focus_color;
 }
 
 .linked button,
@@ -89,6 +108,7 @@ button.link:active label {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 }
+*/
 
 spinbutton {
     border-width: 1px;
@@ -108,11 +128,23 @@ spinbutton.vertical button.up {
 spinbutton.vertical button.down {
     border-width: 1px 0 0;
 }
+/*
 spinbutton button:focus {
     border-color: @border_color;
 }
+*/
+spinbutton.horizontal button:focus,
+spinbutton.vertical button.up:focus,
+spinbutton.vertical button.down:focus {
+    border-color: @foc_border;
+}
+
 
 combobox button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-width: 0px;
+}
+
+combobox arrow {
 }

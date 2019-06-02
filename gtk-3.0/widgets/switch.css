@@ -1,7 +1,8 @@
 switch {
     border-width: 1px;
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 0px;
+    margin: 1px;
 }
 
 switch:checked {
@@ -10,23 +11,13 @@ switch:checked {
 }
 
 switch slider {
-    /* same as in button */
-    background-image: linear-gradient(to bottom,
-        @input_bg_color,
-        @input_bg_color 40%,
-        shade(@input_bg_color, 0.94));
+    background: @bg_color;
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: 0px;
     margin: -1px;
-}
-switch:hover slider,
-switch:focus slider {
-    background-image: linear-gradient(to bottom,
-        @input_bg_color,
-        @input_bg_color 40%,
-        shade(@input_bg_color, 0.98));
 }
 
 switch:disabled slider {
     background: @secondary_fg_color;
+    border-style: dashed;
 }

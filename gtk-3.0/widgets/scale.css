@@ -14,7 +14,7 @@ scale highlight {
 }
 
 scale slider {
-    border-radius: 50%;
+    border-radius: 0%;
     min-width: 14px;
     min-height: 14px;
     border: 1px solid @border_color;
@@ -24,6 +24,7 @@ scale slider {
 
 scale slider:disabled {
     background: shade(@input_bg_color, 0.94);
+    border-style: dashed;
 }
 
 scale mark {

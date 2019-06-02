@@ -17,9 +17,11 @@ scrollbar slider {
     min-height: 7px;
 }
 
+/*
 scrollbar slider:hover {
     background-color: mix(@border_color, @secondary_fg_color, 0.5);
 }
+*/
 
 scrollbar slider:active {
     background-color: @selected_bg_color;

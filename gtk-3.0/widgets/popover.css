@@ -18,11 +18,14 @@ popover modelbutton:hover {
     background: @selected_bg_color;
     color: @selected_fg_color;
 }
+
 /* First item is initially focused, so using same style
  * as :hover would be irritating */
+/*
 popover modelbutton:focus {
     border: 1px dotted @border_color;
 }
+*/
 
 toolbar.osd {
     border-radius: 1em;

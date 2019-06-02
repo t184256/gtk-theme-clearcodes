@@ -1,18 +1,65 @@
+/* define color palette */
+@define-color bad_black #222;
+@define-color bad_white #ddd;
+@define-color test #0ff;
+
+@define-color black #000;
+@define-color white #fff;
+/* from tango */
+@define-color orange #f59700;
+@define-color orange_dark #ce5c00;
+@define-color orange_light #fcaf3e;
+@define-color blue #3465a4;
+@define-color green #73d216;
+@define-color green_dark #4e9a06;
+@define-color grey1 #eeeeec;
+@define-color grey2 #d3d7cf;
+@define-color grey3 #babdb6;
+@define-color grey4 #888a85;
+@define-color grey5 #555753;
+@define-color grey6 #2e3436;
+@define-color violet #75507b;
+
+@define-color bg @black;
+@define-color fg @white;
+@define-color active @orange;
+@define-color normal @grey2;
+@define-color disabled @grey2;
+@define-color disabled_text @grey5;
+@define-color focused @violet;
+@define-color active_text @black;
+@define-color alt_bg @grey5;
+
+
+/* define color meanings */
+@define-color sel_bg @active;
+@define-color sel_fg @active_text;
+@define-color foc_border @focused;
+@define-color act_bg @active;
+@define-color act_fg @active_text;
+@define-color act_border @active;
+@define-color dis_bg @bg;
+@define-color dis_fg @disabled;
+@define-color dis_border @disabled;
+
 /* default color scheme */
-@define-color bg_color #eee;
-@define-color fg_color #222;
+@define-color bg_color @bg;
+@define-color fg_color @fg;
 @define-color base_color @bg_color;
 @define-color text_color @fg_color;
-@define-color selected_bg_color #26c;
-@define-color selected_fg_color #fff;
-@define-color tooltip_bg_color #fff;
+@define-color selected_bg_color @sel_bg;
+@define-color selected_fg_color @sel_fg;
+/*@define-color disabled_fg_color mix(@fg_color, @bg_color, 0.4);*/
+@define-color disabled_fg_color @disabled_text;
+@define-color tooltip_bg_color @alt_bg;
 @define-color tooltip_fg_color @text_color;
 
-@define-color border_color mix(@fg_color, @bg_color, 0.75);
-@define-color input_bg_color #fff;
+/*@define-color border_color mix(@fg_color, @bg_color, 0.75);*/
+@define-color border_color @normal;
+@define-color input_bg_color @bg_color;
 @define-color input_fg_color @text_color;
-@define-color secondary_fg_color mix(@fg_color, @bg_color, 0.4);
-@define-color focus_color @selected_bg_color;
+@define-color secondary_fg_color @disabled_fg_color;
+@define-color focus_color @foc_border;
 
 * {
     border-color: @border_color;
@@ -31,6 +78,7 @@ selection,
     background-color: @selected_bg_color;
     color: @selected_fg_color;
 }
+
 /* !important seems to be broken, so I use this hack to push specificity */
 *:disabled:disabled {
     color: @secondary_fg_color;
@@ -55,19 +103,38 @@ statusbar border {
 }
 
 entry {
-    padding: 3px;
+    padding: 0.25em;
     border-width: 1px;
     background-color: @input_bg_color;
     color: @input_fg_color;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 entry:disabled {
-    background: shade(@input_bg_color, 0.94);
+    background: @dis_bg;
+}
+*:disabled {
+    /*background: shade(@input_bg_color, 0.94);*/
+    background: @dis_bg;
+    border-color: @dis_border;
+    border-style: dotted;
+}
+combobox entry {
+    /* Looks nicer, but *BUG* does not get border-colored as active */
+    border-width: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+combobox > box.linked > button.combo { padding: 0; }  /* for height equality */
+combobox {
+    border-width: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 slider:focus,
 switch:focus slider,
 spinbutton:focus,
-notebook:focus tab:checked,
 radio:focus,
 check:focus,
 entry:focus,

@@ -14,11 +14,11 @@ menu {
 }
 
 menuitem {
-    padding: 0.4em 1em;
+    padding: 0.35em;
 }
 
 menu menuitem {
-    padding: 0.4em;
+    padding: 0.25em;
     margin: 1px;
 }
 
@@ -30,7 +30,7 @@ combobox menuitem:hover * {
 }
 
 toolbar button {
-    padding: 0.2em;
+    padding: 0.25em;
 }
 
 separator {

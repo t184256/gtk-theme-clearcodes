@@ -1,6 +1,7 @@
 progressbar {
     border-width: 1px;
     background: @input_bg_color;
+    margin: 1px;
 }
 
 /* FIXME: there is at least a second wrapper type. I don't know what it is */
